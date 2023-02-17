@@ -1,6 +1,10 @@
-const CC = require('currency-converter-lt')
-let currencyConverter = new CC({from:"USD", to:"RUB", amount:1})
+const fs = require('fs')
 
-currencyConverter.convert().then((response) => {
-    console.log(`Result: ${response}`) //or do something else
+// fs.mkdirSync('text-files')
+// fs.mkdir('text-files', () => {
+//     fs.writeFile('./text-files/some.txt', 'Hello', () => {})
+// })
+
+fs.unlink('./text-files/some.txt', () => {
+    fs.rmdir('./text-files', () => {})
 })
